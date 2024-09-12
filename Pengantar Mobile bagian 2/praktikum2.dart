@@ -6,7 +6,15 @@
     }
 }
 */
-
+// langkah 2
+/*void main() {
+    int counter = 0; //penambahan inisialisasi variable
+    while (counter < 33) {
+      print(counter);
+      counter++;
+    }
+}
+*/
 // langkah3
 void main() {
   int counter = 0;
