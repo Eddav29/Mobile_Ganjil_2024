@@ -290,5 +290,5 @@ void main() {
 ---
 
 ### Link Commit Repo GitHub
-Semua solusi telah diimplementasikan dalam kode dan dapat diakses melalui repository GitHub pada commit berikut: [Link Commit GitHub](#).
+Semua solusi telah diimplementasikan dalam kode dan dapat diakses melalui repository GitHub pada commit berikut: [Link Commit GitHub](https://github.com/Eddav29/Mobile_Ganjil_2024/commit/6f5dc14f324b492853445bfce8f66be7ddc74236).
 
