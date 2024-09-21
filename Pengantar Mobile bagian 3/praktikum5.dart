@@ -24,7 +24,7 @@ void main() {
  // Deklarasi dan inisialisasi variabel dengan tipe record
  //berikut penyelesaiinyya
   (String, int) mahasiswa = ('Eddo', 2241720232);
-  
+  \
   // Mencetak variabel mahasiswa
   print(mahasiswa); // Output: (Eddo, 2241720232)
 
