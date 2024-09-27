@@ -59,9 +59,7 @@ flutter:
   uses-material-design: true
 
 assets:
-  - assets/
-  - assets/images/
-  - images/gunung-batu.jpeg
+  - assets/images/gunung-batu.jepg
 
   # To add assets to your application, add an assets section, like this:
   # assets:
