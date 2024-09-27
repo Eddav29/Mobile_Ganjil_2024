@@ -1,16 +1,102 @@
-# layout_flutter
+# Praktikum 1: Flutter Layout
 
-A new Flutter project.
+## Deskripsi
+Pada praktikum ini, kita akan membuat sebuah aplikasi Flutter sederhana yang menampilkan informasi wisata gunung di Batu, Malang, Indonesia. Aplikasi ini menggunakan widget dasar Flutter seperti `Container`, `Row`, `Column`, dan `Text`.
 
-## Getting Started
+## Struktur Proyek
+Berikut adalah struktur proyek dari aplikasi ini:
+```
+/d:/Kuliah/Semester 5/Mobile_Ganjil_2024/Layout dan Navigasi/layout_flutter/
+│
+└───README.md
+└───main.dart
+```
 
-This project is a starting point for a Flutter application.
+## Kode Utama
+```dart
+import 'package:flutter/material.dart';
 
-A few resources to get you started if this is your first Flutter project:
+void main() => runApp(MyApp());
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+class MyApp extends StatelessWidget {
+    @override
+    Widget build(BuildContext context) {
+        Widget titleSection = Container(
+            padding: const EdgeInsets.all(16.0),
+            decoration: BoxDecoration(
+                color: Colors.blue[50],
+                border: Border.all(
+                    color: Colors.blue,
+                    width: 2,
+                ),
+                borderRadius: BorderRadius.circular(8),
+            ),
+            child: Row(
+                children: [
+                    Expanded(
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                                Container(
+                                    padding: const EdgeInsets.only(bottom: 8.0),
+                                    child: const Text(
+                                        'Wisata Gunung di Batu',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                        ),
+                                    ),
+                                ),
+                                Text(
+                                    'Batu, Malang, Indonesia',
+                                    style: TextStyle(color: Colors.grey[500]),
+                                ),
+                            ],
+                        ),
+                    ),
+                    Icon(
+                        Icons.star,
+                        color: Colors.red[500],
+                    ),
+                    const Text('41'),
+                ],
+            ),
+        );
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+        return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Flutter layout: Eddo Dava Alfarisi dan 2241720232',
+            home: Scaffold(
+                appBar: AppBar(
+                    title: const Text('Flutter layout demo'),
+                ),
+                body: Center(
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                            titleSection,
+                            const Padding(
+                                padding: EdgeInsets.all(16.0),
+                                child: Text('Hello World'),
+                            ),
+                        ],
+                    ),
+                ),
+            ),
+        );
+    }
+}
+```
+
+## Langkah-langkah
+1. **Langkah 1**: Membuat aplikasi Flutter dengan `MaterialApp` dan `Scaffold`.
+2. **Langkah 2**: Membuat `titleSection` yang berisi informasi wisata gunung.
+3. **Soal 1**: Menggunakan `Expanded` widget untuk mengatur tata letak.
+4. **Soal 2**: Menambahkan `Container` untuk judul dan lokasi.
+5. **Soal 3**: Menambahkan ikon bintang dan teks jumlah bintang.
+
+## Penulis
+- Eddo Dava Alfarisi
+- NIM: 2241720232
+
+## Lisensi
+Proyek ini dilisensikan di bawah lisensi MIT.
