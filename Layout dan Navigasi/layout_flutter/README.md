@@ -1,3 +1,7 @@
+## Penulis
+- Eddo Dava Alfarisi
+- NIM: 2241720232
+
 # Praktikum 1: Flutter Layout
 
 ## Deskripsi
@@ -8,8 +12,30 @@ Berikut adalah struktur proyek dari aplikasi ini:
 ```
 /d:/Kuliah/Semester 5/Mobile_Ganjil_2024/Layout dan Navigasi/layout_flutter/
 │
-└───README.md
-└───main.dart
+├───android
+│   ├───app
+│   │   ├───build.gradle
+│   │   └───src
+│   │       ├───main
+│   │       │   ├───AndroidManifest.xml
+│   │       │   ├───java
+│   │       │   └───res
+│   └───build.gradle
+├───ios
+│   ├───Runner
+│   │   ├───AppDelegate.swift
+│   │   ├───Assets.xcassets
+│   │   ├───Info.plist
+│   │   └───main.swift
+│   └───Runner.xcodeproj
+├───lib
+│   ├───main.dart
+├───test
+│   ├───widget_test.dart
+├───images
+│   ├───gunung_batu.jpg
+└───pubspec.yaml
+├───README.md
 ```
 
 ## Kode Utama
@@ -90,13 +116,15 @@ class MyApp extends StatelessWidget {
 ## Langkah-langkah
 1. **Langkah 1**: Membuat aplikasi Flutter dengan `MaterialApp` dan `Scaffold`.
 2. **Langkah 2**: Membuat `titleSection` yang berisi informasi wisata gunung.
-3. **Soal 1**: Menggunakan `Expanded` widget untuk mengatur tata letak.
-4. **Soal 2**: Menambahkan `Container` untuk judul dan lokasi.
-5. **Soal 3**: Menambahkan ikon bintang dan teks jumlah bintang.
+   1. **Soal 1**: Menggunakan `Expanded` widget untuk mengatur tata letak.
+   2. **Soal 2**: Menambahkan `Container` untuk judul dan lokasi.
+   3. **Soal 3**: Menambahkan ikon bintang dan teks jumlah bintang.
 
-## Penulis
-- Eddo Dava Alfarisi
-- NIM: 2241720232
+## hasil <br>
+
+![alt text](images/praktikum1-4.png)
+
+
 
 ## Lisensi
 Proyek ini dilisensikan di bawah lisensi MIT.

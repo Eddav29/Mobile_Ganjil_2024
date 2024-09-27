@@ -1,29 +1,24 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
-  //langkah 2
+
+
   Widget build(BuildContext context) {
+    // Membuat title section
     Widget titleSection = Container(
-      padding: const EdgeInsets.all(16.0),
-      decoration: BoxDecoration(
-        color: Colors.blue[50],
-        border: Border.all(
-          color: Colors.blue,
-          width: 2,
-        ),
-        borderRadius: BorderRadius.circular(8),
-      ),
+      padding: const EdgeInsets.all(32.0),
+
       child: Row(
         children: [
           Expanded(
-            /* soal 1*/
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                /* soal 2*/
                 Container(
                   padding: const EdgeInsets.only(bottom: 8.0),
                   child: const Text(
@@ -40,18 +35,48 @@ class MyApp extends StatelessWidget {
               ],
             ),
           ),
-          /* soal 3*/
-          Icon(
-            Icons.star,
-            color: Colors.red[500],
+          Container(
+            padding: const EdgeInsets.all(32.0), // Padding sebesar 32 di semua sisi
+            child: Row(
+              children: [
+                Icon(
+                  Icons.star,
+                  color: Colors.red[500],
+                ),
+                const SizedBox(width: 8), // Memberi jarak antara ikon dan teks
+                const Text('41'),
+              ],
+            ),
           ),
-          const Text('41'),
         ],
       ),
     );
 
+    Color color = Theme.of(context).primaryColor;
 
-    //langkah 1
+    // Membuat button section
+    Widget buttonSection = Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        _buildButtonColumn(color, Icons.call, 'CALL'),
+        _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
+        _buildButtonColumn(color, Icons.share, 'SHARE'),
+      ],
+    );
+
+    Widget textSection = Container(
+      padding: const EdgeInsets.all(32),
+      child: const Text(
+        'Gunung Banyak adalah sebuah gunung yang terletak di Kabupaten Batu'
+        ', Jawa Timur, Indonesia. Gunung ini memiliki ketinggian 1.301 meter di atas permukaan laut.'
+        ' Gunung ini terletak di kawasan Wisata Banyak, yang merupakan kawasan wisata yang terletak di lereng Gunung Banyak. '
+        'Gunung ini terletak di kawasan Wisata Banyak, yang merupakan kawasan wisata yang terletak di lereng Gunung Banyak.'
+        ' By Eddo Dava Alfarisi dan 2241720232',
+        softWrap: true,
+      ),
+    );
+
+    // Menampilkan layout utama
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter layout: Eddo Dava Alfarisi dan 2241720232 ',
@@ -63,15 +88,36 @@ class MyApp extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              
               titleSection, // Menampilkan titleSection di sini
-              const Padding(
-                padding: EdgeInsets.all(16.0),
-                child: Text('Hello World'),
-              ),
+              buttonSection,
+              textSection,
             ],
           ),
         ),
       ),
+    );
+  }
+
+  // Membuat kolom tombol
+  Column _buildButtonColumn(Color color, IconData icon, String label) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(icon, color: color),
+        Container(
+          margin: const EdgeInsets.only(top: 8),
+          child: Text(
+            label,
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w400,
+              color: color,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
