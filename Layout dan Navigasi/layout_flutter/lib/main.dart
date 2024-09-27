@@ -88,7 +88,12 @@ class MyApp extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              
+              Image.asset(
+                'images/gunung-batu.jpeg',
+                width: 600,
+                height: 240,
+                fit: BoxFit.cover,
+              ),
               titleSection, // Menampilkan titleSection di sini
               buttonSection,
               textSection,
