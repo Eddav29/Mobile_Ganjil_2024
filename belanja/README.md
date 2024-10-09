@@ -734,3 +734,5 @@ class HomePage extends StatelessWidget {
 Perubahan yang dilakukan:
 Navigasi dengan context.go(): Ini menggantikan Navigator.push dan memanfaatkan URL berbasis rute dari go_router.
 extra: Mengirimkan objek item saat navigasi, yang diambil pada halaman tujuan.
+
+<video controls src="src_md/hasil akhir.mp4" title="Title"></video>
