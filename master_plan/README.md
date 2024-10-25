@@ -1,4 +1,4 @@
-# Master Plan Project
+*# Master Plan Project
 
 ## Information
 
@@ -82,3 +82,29 @@ return ListView.builder(
 ```
 Fungsi kode diatas adalah Menambahkan ScrollController ke ListView dan mengatur keyboard, yaitu otomatis menutup keyboard saat menggulir di iOS, dan harus ditutup manual di platform lain.
 ![alt text](image-1.png)
+
+## Praktikum 2
+1. Jelaskan mana yang dimaksud InheritedWidget pada langkah 1 tersebut! Mengapa yang digunakan InheritedNotifier?
+   yang dimaksud dengan InheritedWidget adalah PlanProvider, yang merupakan subclass dari InheritedNotifier<ValueNotifier<Plan>>. InheritedWidget adalah kelas dasar yang digunakan di Flutter untuk memungkinkan pengaksesan data dari widget ancestor oleh widget descendant (anak/cucu) tanpa harus secara eksplisit meneruskan data tersebut melalui parameter.
+2. Jelaskan maksud dari method di langkah 3 pada praktikum tersebut! Mengapa dilakukan demikian?
+completedCount: Menghitung jumlah tugas yang telah selesai dari daftar tugas.
+completenessMessage: Menyediakan pesan yang menunjukkan jumlah tugas selesai dari total tugas, dalam format mudah dibaca.
+3.  Lakukan capture hasil dari Langkah 9 berupa GIF, kemudian jelaskan apa yang telah Anda buat!
+<video controls src="hasil2.mp4" title="Title"></video>
+
+### Praktikum 3
+![alt text](image-2.png)
+
+(Sebelum Navigasi):
+
+Aplikasi dimulai dengan MaterialApp, kemudian ada PlanProvider yang berfungsi mengelola logika atau data aplikasi. Tampilan awalnya adalah PlanCreatorScreen, dengan menggunakan Column sebagai tata letaknya. Di dalam Column ini, ada TextField untuk input teks dan Expanded yang digunakan agar ListView bisa tampil dinamis sesuai dengan ukuran layar.
+
+Navigasi dengan Push:
+
+Setelah pengguna berinteraksi, kita menggunakan Navigator.push untuk berpindah dari PlanCreatorScreen ke tampilan baru, yaitu PlanScreen.
+
+Diagram Kanan (Setelah Navigasi):
+
+Di layar baru, PlanScreen ditampilkan dengan Scaffold sebagai struktur utamanya, untuk mengatur tata letak. Column tetap digunakan untuk menyusun widget, tetapi di layar ini, SafeArea juga ditambahkan agar konten tidak terpotong oleh area notifikasi atau tepi layar. Expanded dan ListView masih digunakan untuk menampilkan daftar item, ditambah dengan widget Text untuk menampilkan teks.
+
+<video controls src="hasil3.mp4" title="Title"></video>
