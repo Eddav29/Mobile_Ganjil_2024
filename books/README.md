@@ -18,6 +18,8 @@
     - [Jawaban](#jawaban-1)
   - [W12: Soal 3](#w12-soal-3)
     - [Pertanyaan](#pertanyaan-2)
+      - [Jelaskan maksud kode langkah 5 tersebut terkait substring dan catchError!](#jelaskan-maksud-kode-langkah-5-tersebut-terkait-substring-dan-catcherror)
+      - [Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 3".](#capture-hasil-praktikum-anda-berupa-gif-dan-lampirkan-di-readme-lalu-lakukan-commit-dengan-pesan-w12-soal-3)
     - [Jawaban](#jawaban-2)
   - [W12: Soal 4](#w12-soal-4)
     - [Pertanyaan](#pertanyaan-3)
@@ -91,7 +93,32 @@ class MyApp extends StatelessWidget {
 
 ## W12: Soal 3
 ### Pertanyaan
+#### Jelaskan maksud kode langkah 5 tersebut terkait substring dan catchError!
+#### Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 3".
 ### Jawaban
+
+```dart
+ElevatedButton(
+    child: const Text('Go'),
+    onPressed: (){
+        setState(() {});
+        getData().then((value) {
+            result = value.body.toString().substring(0,450);
+            setState(() {});
+        }).catchError((_){
+            result = 'An Error Occured';
+            setState(() {});
+        });
+    },
+),
+```
+<br>
+Maksudnya adalah kode tersebut menggunakan `substring` untuk mengambil 450 karakter pertama dari hasil respons `value.body`. Jika terjadi kesalahan saat mengambil data, `catchError` akan menangkap kesalahan tersebut dan mengatur `result` menjadi 'An Error Occured'.
+<br>
+<br>
+
+<video controls src="20241108-0049-51.1344183.mp4" title="Title"></video>
+<br>
 
 ## W12: Soal 4
 ### Pertanyaan

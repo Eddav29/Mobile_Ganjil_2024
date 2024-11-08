@@ -39,7 +39,16 @@ class _FuturePageState extends State<FuturePage> {
           children:[
             ElevatedButton(
               child: const Text('Go'),
-              onPressed: (){},
+              onPressed: (){
+                setState(() {});
+                getData().then((value) {
+                  result = value.body.toString().substring(0,450);
+                  setState(() {});
+                }).catchError((_){
+                  result = 'An Error Occured';
+                  setState(() {});
+                });
+              },
             ),
             const Spacer(),
             Text(result),
