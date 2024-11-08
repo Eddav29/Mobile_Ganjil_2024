@@ -28,6 +28,8 @@
     - [Jawaban](#jawaban-3)
   - [W12: Soal 5](#w12-soal-5)
     - [Pertanyaan](#pertanyaan-4)
+      - [Jelaskan maksud kode langkah 2 tersebut!](#jelaskan-maksud-kode-langkah-2-tersebut)
+      - [Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 5".](#capture-hasil-praktikum-anda-berupa-gif-dan-lampirkan-di-readme-lalu-lakukan-commit-dengan-pesan-w12-soal-5)
     - [Jawaban](#jawaban-4)
   - [W12: Soal 6](#w12-soal-6)
     - [Pertanyaan](#pertanyaan-5)
@@ -160,10 +162,34 @@ fungsi `count` yang memanggil tiga fungsi asinkron `returnOneAsync`, `returnTwoA
 
 <br><br>
 <video controls src="20241108-0057-14.4889553.mp4" title="Title"></video>
+<br><br>
 
 ## W12: Soal 5
 ### Pertanyaan
+#### Jelaskan maksud kode langkah 2 tersebut!
+#### Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 5".
 ### Jawaban
+
+```dart
+late Completer completer;
+
+Future getNumber() {
+  completer = Completer<int>();
+  calculate();
+  return completer.future;
+}
+
+Future calculate() async {
+  await Future.delayed(const Duration(seconds : 5));
+  completer.complete(42);
+}
+```
+<br>
+Maksud dari program tersebut adalah fungsi `getNumber` yang menginisialisasi sebuah `Completer` dan memanggil fungsi `calculate`. Fungsi `calculate` menunggu selama lima detik sebelum menyelesaikan `Completer` dengan nilai 42. Nilai ini kemudian dapat diakses melalui properti `future` dari `Completer`. yang kemudian akan diload melalui set state pada onpresed GO
+
+<br><br>
+<video controls src="20241108-0105-30.3756281.mp4" title="Title"></video>
+<br><br>
 
 ## W12: Soal 6
 ### Pertanyaan
