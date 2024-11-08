@@ -42,7 +42,10 @@
     - [Jawaban](#jawaban-6)
   - [W12: Soal 8](#w12-soal-8)
     - [Pertanyaan](#pertanyaan-7)
+      - [Jelaskan maksud perbedaan kode langkah 1 dan 4!](#jelaskan-maksud-perbedaan-kode-langkah-1-dan-4)
     - [Jawaban](#jawaban-7)
+      - [langkah 1](#langkah-1)
+      - [langkah 4](#langkah-4)
   - [W12: Soal 9](#w12-soal-9)
     - [Pertanyaan](#pertanyaan-8)
     - [Jawaban](#jawaban-8)
@@ -235,7 +238,48 @@ Maksud perbedaan langkah 2 dengan langkah 5-6 tersebut adalah ditambahkannya fun
 
 ## W12: Soal 8
 ### Pertanyaan
+#### Jelaskan maksud perbedaan kode langkah 1 dan 4! 
 ### Jawaban
+#### langkah 1 
+```dart
+     FutureGroup<int> futureGroup = FutureGroup<int>();
+     futureGroup.add(returnOneAsync());
+     futureGroup.add(returnTwoAsync());
+     futureGroup.add(returnThreeAsync());
+     futureGroup.close();
+     futureGroup.future.then((List<int> value) {
+       int total = 0;
+       for(var element in value){
+         total += element;
+       }
+       setState(() {
+         result = total.toString();
+       });
+    });
+```
+#### langkah 4
+```dart
+final futures = Future.wait<int>([
+      returnOneAsync(),
+      returnTwoAsync(),
+      returnThreeAsync(),
+    ]);
+
+    futures.then((List<int> value) {
+      int total = 0;
+      for(var element in value){
+        total += element;
+      }
+      setState(() {
+        result = total.toString();
+      });
+    });
+```
+<br>
+Perbedaan dari langkah 1 dan 4 adalah langkah 1 menggunakan `FutureGroup` untuk mengelola beberapa `Future` dan menunggu hingga semuanya selesai sebelum melanjutkan. Sedangkan langkah 4 menggunakan `Future.wait` untuk menunggu beberapa `Future` secara bersamaan dan mengembalikan hasilnya dalam bentuk daftar setelah semuanya selesai. Kedua cara ini bertujuan untuk menjalankan beberapa operasi asinkron secara paralel dan mengumpulkan hasilnya.
+<br><br>
+<video controls src="20241108-0136-24.7876536.mp4" title="Title"></video>
+<br><br>
 
 ## W12: Soal 9
 ### Pertanyaan
