@@ -23,6 +23,8 @@
     - [Jawaban](#jawaban-2)
   - [W12: Soal 4](#w12-soal-4)
     - [Pertanyaan](#pertanyaan-3)
+      - [Jelaskan maksud kode langkah 1 dan 2 tersebut!](#jelaskan-maksud-kode-langkah-1-dan-2-tersebut)
+      - [Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 4".](#capture-hasil-praktikum-anda-berupa-gif-dan-lampirkan-di-readme-lalu-lakukan-commit-dengan-pesan-w12-soal-4)
     - [Jawaban](#jawaban-3)
   - [W12: Soal 5](#w12-soal-5)
     - [Pertanyaan](#pertanyaan-4)
@@ -122,7 +124,42 @@ Maksudnya adalah kode tersebut menggunakan `substring` untuk mengambil 450 karak
 
 ## W12: Soal 4
 ### Pertanyaan
+#### Jelaskan maksud kode langkah 1 dan 2 tersebut!
+#### Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 4".
+
 ### Jawaban
+```dart
+Future<int> returnOneAsync() async {
+    await Future.delayed(const Duration(seconds: 1));
+    return 1;
+  }
+
+  Future<int> returnTwoAsync() async {
+    await Future.delayed(const Duration(seconds: 1));
+    return 2;
+  }
+
+  Future<int> returnThreeAsync() async {
+    await Future.delayed(const Duration(seconds: 1));
+    return 3;
+  }
+
+  Future count() async {
+    int total = 0;
+    total += await returnOneAsync();
+    total += await returnTwoAsync();
+    total += await returnThreeAsync();
+    setState(() {
+      result = total.toString();
+    });
+  }
+```
+<br>
+Maksud dari program tersebut merupakan 
+fungsi `count` yang memanggil tiga fungsi asinkron `returnOneAsync`, `returnTwoAsync`, dan `returnThreeAsync` secara berurutan. Setiap fungsi asinkron ini menunggu selama satu detik sebelum mengembalikan nilai masing-masing (1, 2, dan 3). Nilai-nilai ini kemudian dijumlahkan dan hasilnya disimpan dalam variabel `total`. Setelah semua fungsi selesai dieksekusi, `setState` dipanggil untuk memperbarui UI dengan hasil penjumlahan tersebut.
+
+<br><br>
+<video controls src="20241108-0057-14.4889553.mp4" title="Title"></video>
 
 ## W12: Soal 5
 ### Pertanyaan
