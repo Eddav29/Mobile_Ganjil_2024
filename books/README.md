@@ -349,11 +349,52 @@ tidak terdapat perbedaan ui dikarenakan ui masih sama hanya terdapat handling er
 
 ## W12: Soal 15
 ### Pertanyaan
+Soal 15
+Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerjaan Anda.
+Silakan ganti dengan warna tema favorit Anda.
 ### Jawaban
+```dart
+import 'package:flutter/material.dart';
+
+class NavigationFirst extends StatefulWidget {
+  const NavigationFirst({Key? key}) : super(key: key);
+
+  @override
+  _NavigationFirstState createState() => _NavigationFirstState();
+}
+
+class _NavigationFirstState extends State<NavigationFirst> {
+  Color color = Colors.lightBlue;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Eddo Navigation First Screen'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: const Text('Go changeColor'),
+          onPressed: () {
+           _navigateAndGetColor();
+          },
+        ),
+      ),
+    );
+  }
+}
+```
 
 ## W12: Soal 16
 ### Pertanyaan
+Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
+Gantilah 3 warna pada langkah 5 dengan warna favorit Anda!
+Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 16".
 ### Jawaban
+pada halaman second 
+Ketika tombol ditekan, Navigator.pop mengirimkan nilai warna tersebut kembali ke halaman pertama, dan tampilan halaman pertama diperbarui untuk mencerminkan warna yang baru.
+<br><br>
+<video controls src="20241108-0338-59.8485775.mp4" title="Title"></video>
+<br><br>
 
 ## W12: Soal 17
 ### Pertanyaan
