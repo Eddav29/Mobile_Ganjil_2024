@@ -398,4 +398,13 @@ Ketika tombol ditekan, Navigator.pop mengirimkan nilai warna tersebut kembali ke
 
 ## W12: Soal 17
 ### Pertanyaan
+Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
+Gantilah 3 warna pada langkah 3 dengan warna favorit Anda!
+Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 17".
+
 ### Jawaban
+
+Yang terjadi ketika button diklik adalah background terganti dikarenakan Navigator.pop mengirimkan nilai warna yang dipilih kembali ke halaman pertama, dan tampilan halaman pertama diperbarui untuk mencerminkan warna yang baru.
+<br><br>
+
+<video controls src="20241108-0347-10.3593016.mp4" title="Title"></video>

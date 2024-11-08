@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:books/navigation_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const NavigationFirst(),
+      home: const NavigationDialog(),
     );
   }
 }
