@@ -52,6 +52,7 @@
     - [Jawaban](#jawaban-8)
   - [W12: Soal 10](#w12-soal-10)
     - [Pertanyaan](#pertanyaan-9)
+      - [Panggil method handleError() tersebut di ElevatedButton, lalu run. Apa hasilnya? Jelaskan perbedaan kode langkah 1 dan 4!](#panggil-method-handleerror-tersebut-di-elevatedbutton-lalu-run-apa-hasilnya-jelaskan-perbedaan-kode-langkah-1-dan-4)
     - [Jawaban](#jawaban-9)
   - [W12: Soal 11](#w12-soal-11)
     - [Pertanyaan](#pertanyaan-10)
@@ -292,7 +293,13 @@ Perbedaan dari langkah 1 dan 4 adalah langkah 1 menggunakan `FutureGroup` untuk 
 
 ## W12: Soal 10
 ### Pertanyaan
+#### Panggil method handleError() tersebut di ElevatedButton, lalu run. Apa hasilnya? Jelaskan perbedaan kode langkah 1 dan 4!
 ### Jawaban
+Hasilnya sama saja , yang membedakan dari kode diatas adalah untuk langkah 1 handling error berada pada onpresed secara langsung sedangkan pada langkah 4 dibuatkan fungsi async khusus untuk handling error dimana didalamnya terdapat await untuk menjalankan fungsi pada langkah 1 terlebih dahulu dan pada main hanya perlu memanggil fungsi langkah 4
+
+<br><br>
+<video controls src="20241108-0151-57.5334542.mp4" title="Title"></video>
+<br><br>
 
 ## W12: Soal 11
 ### Pertanyaan

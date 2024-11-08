@@ -59,17 +59,19 @@ class _FuturePageState extends State<FuturePage> {
                 // 
                 // ReturnFG();
 
-                returnError().then((value) {
-                  setState(() {
-                    result = "Success";
-                  });
-                }).catchError((onError){
-                  setState(() {
-                    result = onError.toString();
-                  });
-                }).whenComplete(() {
-                  print('Completed');
-                });
+                // returnError().then((value) {
+                //   setState(() {
+                //     result = "Success";
+                //   });
+                // }).catchError((onError){
+                //   setState(() {
+                //     result = onError.toString();
+                //   });
+                // }).whenComplete(() {
+                //   print('Completed');
+                // });
+
+                handleError();
               },
             ),
             const Spacer(),
@@ -171,5 +173,17 @@ class _FuturePageState extends State<FuturePage> {
   Future returnError() async {
     await Future.delayed(const Duration(seconds: 2));
     throw Exception('Sonething Terrrible Happened');
+  }
+
+  Future handleError() async {
+    try {
+      await returnError();
+    } catch (e) {
+      setState(() {
+        result = e.toString();
+      });
+    } finally {
+      print('Complete');
+    }
   }
 }
