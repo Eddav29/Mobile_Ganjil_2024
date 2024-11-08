@@ -4,6 +4,8 @@ import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
 import 'package:async/async.dart';
 
+import 'geolocation.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const FuturePage(),
+      home: const LocationScreen(),
     );
   }
 }

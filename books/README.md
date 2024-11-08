@@ -302,18 +302,50 @@ Hasilnya sama saja , yang membedakan dari kode diatas adalah untuk langkah 1 han
 ### Pertanyaan
 **Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerjaan Anda.**
 ### Jawaban
-
+```dart
+@override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Current Location Eddo Dava Alfarisi'),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            Text(myPosition),
+          ],
+        ),
+      ),
+    );
+  }
+```
 ## W12: Soal 12
 ### Pertanyaan
 ### Jawaban
+<br><br>
+<video controls src="20241108-0303-21.2641451.mp4" title="Title"></video>
+<br><br>
 
 ## W12: Soal 13
 ### Pertanyaan
+Apakah ada perbedaan UI dengan praktikum sebelumnya? Mengapa demikian?
+Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 13".
+Seperti yang Anda lihat, menggunakan FutureBuilder lebih efisien, clean, dan reactive dengan Future bersama UI.
 ### Jawaban
+Terdapat perbedaan dimana sebelum menampilkan hasil geolocation terdapat loading terlebih dahulu dan kita tidak perlu mendefiniskan kembali longitude dan Latitude dan code menjadi lebih simpel
+<br><br>
+<video controls src="20241108-0314-05.1558979.mp4" title="Title"></video>
+<br><br>
 
 ## W12: Soal 14
 ### Pertanyaan
+Apakah ada perbedaan UI dengan langkah sebelumnya? Mengapa demikian?
+Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 14".
 ### Jawaban
+tidak terdapat perbedaan ui dikarenakan ui masih sama hanya terdapat handling error dan pada program ini tidak terdapat error yang membuat kode langusng ke return
+<br><br>
+<video controls src="20241108-0314-05.1558979.mp4" title="Title"></video>
+<br><br>
 
 ## W12: Soal 15
 ### Pertanyaan
