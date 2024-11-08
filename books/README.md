@@ -38,7 +38,6 @@
       - [langkah 6](#langkah-6)
   - [W12: Soal 7](#w12-soal-7)
     - [Pertanyaan](#pertanyaan-6)
-      - [Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 7".](#capture-hasil-praktikum-anda-berupa-gif-dan-lampirkan-di-readme-lalu-lakukan-commit-dengan-pesan-w12-soal-7)
     - [Jawaban](#jawaban-6)
   - [W12: Soal 8](#w12-soal-8)
     - [Pertanyaan](#pertanyaan-7)
@@ -48,11 +47,9 @@
       - [langkah 4](#langkah-4)
   - [W12: Soal 9](#w12-soal-9)
     - [Pertanyaan](#pertanyaan-8)
-      - [Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 9".](#capture-hasil-praktikum-anda-berupa-gif-dan-lampirkan-di-readme-lalu-lakukan-commit-dengan-pesan-w12-soal-9)
     - [Jawaban](#jawaban-8)
   - [W12: Soal 10](#w12-soal-10)
     - [Pertanyaan](#pertanyaan-9)
-      - [Panggil method handleError() tersebut di ElevatedButton, lalu run. Apa hasilnya? Jelaskan perbedaan kode langkah 1 dan 4!](#panggil-method-handleerror-tersebut-di-elevatedbutton-lalu-run-apa-hasilnya-jelaskan-perbedaan-kode-langkah-1-dan-4)
     - [Jawaban](#jawaban-9)
   - [W12: Soal 11](#w12-soal-11)
     - [Pertanyaan](#pertanyaan-10)
@@ -232,7 +229,7 @@ Maksud perbedaan langkah 2 dengan langkah 5-6 tersebut adalah ditambahkannya fun
 
 ## W12: Soal 7
 ### Pertanyaan
-#### Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 7".
+**Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 7".**
 ### Jawaban
 <br><br>
 <video controls src="20241108-0124-33.3843614.mp4" title="Title"></video>
@@ -285,7 +282,7 @@ Perbedaan dari langkah 1 dan 4 adalah langkah 1 menggunakan `FutureGroup` untuk 
 
 ## W12: Soal 9
 ### Pertanyaan
-#### Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 9".
+ **Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 9".**
 ### Jawaban
 <br><br>
 <video controls src="20241108-0146-27.6036350.mp4" title="Title"></video>
@@ -293,7 +290,7 @@ Perbedaan dari langkah 1 dan 4 adalah langkah 1 menggunakan `FutureGroup` untuk 
 
 ## W12: Soal 10
 ### Pertanyaan
-#### Panggil method handleError() tersebut di ElevatedButton, lalu run. Apa hasilnya? Jelaskan perbedaan kode langkah 1 dan 4!
+ **Panggil method handleError() tersebut di ElevatedButton, lalu run. Apa hasilnya? Jelaskan perbedaan kode langkah 1 dan 4!**
 ### Jawaban
 Hasilnya sama saja , yang membedakan dari kode diatas adalah untuk langkah 1 handling error berada pada onpresed secara langsung sedangkan pada langkah 4 dibuatkan fungsi async khusus untuk handling error dimana didalamnya terdapat await untuk menjalankan fungsi pada langkah 1 terlebih dahulu dan pada main hanya perlu memanggil fungsi langkah 4
 
@@ -303,6 +300,7 @@ Hasilnya sama saja , yang membedakan dari kode diatas adalah untuk langkah 1 han
 
 ## W12: Soal 11
 ### Pertanyaan
+**Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerjaan Anda.**
 ### Jawaban
 
 ## W12: Soal 12
