@@ -34,6 +34,8 @@
   - [W12: Soal 6](#w12-soal-6)
     - [Pertanyaan](#pertanyaan-5)
     - [Jawaban](#jawaban-5)
+      - [langkah 5](#langkah-5)
+      - [langkah 6](#langkah-6)
   - [W12: Soal 7](#w12-soal-7)
     - [Pertanyaan](#pertanyaan-6)
     - [Jawaban](#jawaban-6)
@@ -194,6 +196,33 @@ Maksud dari program tersebut adalah fungsi `getNumber` yang menginisialisasi seb
 ## W12: Soal 6
 ### Pertanyaan
 ### Jawaban
+
+#### langkah 5 
+```dart
+Future calculate2() async {
+    try {
+      await Future.delayed(const Duration(seconds : 5));
+      completer.complete(42);
+    } catch (_) {
+      completer.completeError({});
+    }
+  }
+```
+#### langkah 6
+```dart
+getNumber().then((value) {
+  setState(() {
+    result = value.toString();
+  });
+}).catchError((e) {
+  result = 'An error occurred';
+});
+```
+<br>
+Maksud perbedaan langkah 2 dengan langkah 5-6 tersebut adalah ditambahkannya fungsi trycatch untuk penanganan error 
+<br><br>
+<video controls src="20241108-0113-18.4540501.mp4" title="Title"></video>
+<br><br>
 
 ## W12: Soal 7
 ### Pertanyaan
