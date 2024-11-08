@@ -4,6 +4,7 @@ import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
 import 'package:async/async.dart';
 
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -55,13 +56,8 @@ class _FuturePageState extends State<FuturePage> {
                 //     result = value.toString();
                 //   });
                 // });
-                getNumber().then((value) {
-                  setState(() {
-                    result = value.toString();
-                  });
-                }).catchError((e) {
-                  result = 'An error occurred';
-                });
+                // 
+                ReturnFG();
               },
             ),
             const Spacer(),
@@ -126,5 +122,22 @@ class _FuturePageState extends State<FuturePage> {
     } catch (_) {
       completer.completeError({});
     }
+  }
+
+  void ReturnFG(){
+    FutureGroup<int> futureGroup = FutureGroup<int>();
+    futureGroup.add(returnOneAsync());
+    futureGroup.add(returnTwoAsync());
+    futureGroup.add(returnThreeAsync());
+    futureGroup.close();
+    futureGroup.future.then((List<int> value) {
+      int total = 0;
+      for(var element in value){
+        total += element;
+      }
+      setState(() {
+        result = total.toString();
+      });
+    });
   }
 }

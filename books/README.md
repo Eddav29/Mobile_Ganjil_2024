@@ -38,6 +38,7 @@
       - [langkah 6](#langkah-6)
   - [W12: Soal 7](#w12-soal-7)
     - [Pertanyaan](#pertanyaan-6)
+      - [Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 7".](#capture-hasil-praktikum-anda-berupa-gif-dan-lampirkan-di-readme-lalu-lakukan-commit-dengan-pesan-w12-soal-7)
     - [Jawaban](#jawaban-6)
   - [W12: Soal 8](#w12-soal-8)
     - [Pertanyaan](#pertanyaan-7)
@@ -226,7 +227,11 @@ Maksud perbedaan langkah 2 dengan langkah 5-6 tersebut adalah ditambahkannya fun
 
 ## W12: Soal 7
 ### Pertanyaan
+#### Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 7".
 ### Jawaban
+<br><br>
+<video controls src="20241108-0124-33.3843614.mp4" title="Title"></video>
+<br><br>
 
 ## W12: Soal 8
 ### Pertanyaan
