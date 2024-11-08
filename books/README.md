@@ -48,6 +48,7 @@
       - [langkah 4](#langkah-4)
   - [W12: Soal 9](#w12-soal-9)
     - [Pertanyaan](#pertanyaan-8)
+      - [Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 9".](#capture-hasil-praktikum-anda-berupa-gif-dan-lampirkan-di-readme-lalu-lakukan-commit-dengan-pesan-w12-soal-9)
     - [Jawaban](#jawaban-8)
   - [W12: Soal 10](#w12-soal-10)
     - [Pertanyaan](#pertanyaan-9)
@@ -283,7 +284,11 @@ Perbedaan dari langkah 1 dan 4 adalah langkah 1 menggunakan `FutureGroup` untuk 
 
 ## W12: Soal 9
 ### Pertanyaan
+#### Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 9".
 ### Jawaban
+<br><br>
+<video controls src="20241108-0146-27.6036350.mp4" title="Title"></video>
+<br><br>
 
 ## W12: Soal 10
 ### Pertanyaan
