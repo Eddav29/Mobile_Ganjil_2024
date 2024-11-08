@@ -14,6 +14,7 @@
     - [Jawaban](#jawaban)
   - [W12: Soal 2](#w12-soal-2)
     - [Pertanyaan](#pertanyaan-1)
+    - [Carilah judul buku favorit Anda di Google Books, lalu ganti ID buku pada variabel path di kode tersebut. Caranya ambil di URL browser Anda seperti gambar berikut ini.Kemudian cobalah akses di browser URI tersebut dengan lengkap seperti ini. Jika menampilkan data JSON, maka Anda telah berhasil. Lakukan capture milik Anda dan tulis di README pada laporan praktikum. Lalu lakukan commit dengan pesan "W12: Soal 2".](#carilah-judul-buku-favorit-anda-di-google-books-lalu-ganti-id-buku-pada-variabel-path-di-kode-tersebut-caranya-ambil-di-url-browser-anda-seperti-gambar-berikut-inikemudian-cobalah-akses-di-browser-uri-tersebut-dengan-lengkap-seperti-ini-jika-menampilkan-data-json-maka-anda-telah-berhasil-lakukan-capture-milik-anda-dan-tulis-di-readme-pada-laporan-praktikum-lalu-lakukan-commit-dengan-pesan-w12-soal-2)
     - [Jawaban](#jawaban-1)
   - [W12: Soal 3](#w12-soal-3)
     - [Pertanyaan](#pertanyaan-2)
@@ -83,7 +84,10 @@ class MyApp extends StatelessWidget {
 
 ## W12: Soal 2
 ### Pertanyaan
+### Carilah judul buku favorit Anda di Google Books, lalu ganti ID buku pada variabel path di kode tersebut. Caranya ambil di URL browser Anda seperti gambar berikut ini.Kemudian cobalah akses di browser URI tersebut dengan lengkap seperti ini. Jika menampilkan data JSON, maka Anda telah berhasil. Lakukan capture milik Anda dan tulis di README pada laporan praktikum. Lalu lakukan commit dengan pesan "W12: Soal 2".
 ### Jawaban
+
+![Books](image.png)
 
 ## W12: Soal 3
 ### Pertanyaan

@@ -1,7 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
-import 'dart:convert';
+
 
 void main() => runApp(MyApp());
 
@@ -48,6 +49,13 @@ class _FuturePageState extends State<FuturePage> {
         ),
       ),
     );
+  }
+
+  Future<Response> getData() async {
+    const authority = 'www.googleapis.com';
+    const path = 'books/v1/volumes/kLAoswEACAAJ';
+    Uri url = Uri.https(authority, path);
+    return http.get(url);
   }
   
 }
