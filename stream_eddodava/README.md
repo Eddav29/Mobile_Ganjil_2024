@@ -34,7 +34,22 @@ class MyApp extends StatelessWidget {
 ```
 
 ## Soal 2
-*Deskripsi dan jawaban soal 2*
+Tambahkan 5 warna lainnya sesuai keinginan Anda pada variabel colors tersebut.
+Lakukan commit hasil jawaban Soal 2 dengan pesan "W13: Jawaban Soal 2"
+
+```dart
+import 'package:flutter/material.dart';
+
+class ColorStream {
+  final List<Color> colors =[
+    Colors.red,
+    Colors.yellow,
+    Colors.green,
+    Colors.blue,
+    Colors.purple,
+  ];
+}
+```
 
 ## Soal 3
 *Deskripsi dan jawaban soal 3*
