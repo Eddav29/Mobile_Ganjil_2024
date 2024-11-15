@@ -109,7 +109,17 @@ Perbedaan `await for` dengan `listen` adalah:
 Jadi `await for`, itu menunggu setiap event secara berurutan, sementara `listen`, itu merespons event saat event datang tanpa menunggu. 
 
 ## Soal 6
-*Deskripsi dan jawaban soal 6*
+Jelaskan maksud kode langkah 8 dan 10 tersebut!
+Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+Lalu lakukan commit dengan pesan "W13: Jawaban Soal 6".
+
+![Hasil Praktikum Soal 6](soal6.gif)
+
+Langkah 8: initState()
+Inisialisasi stream untuk mendengarkan angka baru dari NumberStream. Setiap kali angka baru masuk, nilai lastNumber diperbarui dengan setState, sehingga UI menampilkan angka terbaru.
+
+Langkah 10: addRandomNumber()
+Fungsi ini menghasilkan angka acak (0–9) dan mengirimkannya ke stream. Setiap kali fungsi ini dipanggil (misalnya saat tombol ditekan), angka baru akan muncul di UI.
 
 ## Soal 7
 *Deskripsi dan jawaban soal 7*
