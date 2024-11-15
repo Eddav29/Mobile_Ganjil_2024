@@ -68,10 +68,45 @@ Apa maksud isi perintah kode tersebut? Lakukan commit hasil jawaban Soal 3 denga
 fungsi keyword `yield*` adalah untuk menggabungkan stream lain ke dalam stream saat ini. Maksud dari kode tersebut adalah Pertama pada `yield* Stream.periodic(...)` digunakan untuk menghasilkan nilai dari aliran `Stream.periodic` yang menghasilkan warna dari daftar `colors` setiap detik. Dengan kata lain, setiap detik, stream ini akan mengeluarkan warna berdasarkan indeks yang dihitung dari waktu yang telah berlalu. jadi color akan berganti berdasarkan durasi nya
 
 ## Soal 4
-*Deskripsi dan jawaban soal 4*
+Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+Lakukan commit hasil jawaban Soal 4 dengan pesan "W13: Jawaban Soal 4"
+
+![Hasil Praktikum Soal 4](soal4.gif)
 
 ## Soal 5
-*Deskripsi dan jawaban soal 5*
+Jelaskan perbedaan menggunakan listen dan await for (langkah 9) !
+Lakukan commit hasil jawaban Soal 5 dengan pesan "W13: Jawaban Soal 5"
+
+
+```dart
+  void changeColor() async{
+    await for (var eventColor in colorStream.getColors()){
+        setState(() {
+           bgColor = eventColor;
+        ```dart
+            void changeColor() async{
+                await for (var eventColor in colorStream.getColors()){
+                        setState(() {
+                             bgColor = eventColor;
+                        });
+                    }
+                }
+
+            void changeColor(){
+                colorStream.getColors().listen((eventColor) {
+                    setState(() {
+                        bgColor = eventColor;
+                    });
+                });
+            }
+```
+
+Perbedaan `await for` dengan `listen` adalah:
+
+- `await for` digunakan untuk menunggu setiap event dari stream secara asynchronous dalam sebuah loop. Ini memungkinkan untuk menggunakan `await` di dalam loop untuk menunggu setiap event sebelum melanjutkan ke iterasi berikutnya.
+- `listen` digunakan untuk mendaftarkan callback yang akan dipanggil setiap kali stream menghasilkan event baru. Ini tidak memblokir eksekusi kode berikutnya dan memungkinkan  untuk menangani event secara reaktif.
+
+Jadi `await for`, itu menunggu setiap event secara berurutan, sementara `listen`, itu merespons event saat event datang tanpa menunggu. 
 
 ## Soal 6
 *Deskripsi dan jawaban soal 6*
