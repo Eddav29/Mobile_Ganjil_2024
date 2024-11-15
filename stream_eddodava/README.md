@@ -225,3 +225,13 @@ Jelaskan maksud praktikum ini ! Dimanakah letak konsep pola BLoC-nya ?
 Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
 Lalu lakukan commit dengan pesan "W13: Jawaban Soal 13".
 
+![Hasil Praktikum Soal 13](soal13.gif)
+Praktikum ini menggunakan pola BLoC untuk memisahkan logika bisnis dari UI di Flutter. Aplikasi menghasilkan angka acak yang tampil di layar ketika tombol refresh ditekan.
+
+Dalam pola BLoC:
+
+StreamController mengelola aliran data: satu untuk mendeteksi tombol yang ditekan (_generateRandomController), dan kemudian untuk menyimpan angka acak yang akan dikirim ke UI (_randomNumberController).
+Stream mengalirkan data ke UI, sementara Sink menerima perintah dari UI.
+Di RandomScreen, widget StreamBuilder mendengarkan perubahan pada stream randomNumber, sehingga UI diperbarui setiap kali angka acak baru dihasilkan.
+
+
