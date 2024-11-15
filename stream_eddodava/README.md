@@ -122,7 +122,18 @@ Langkah 10: addRandomNumber()
 Fungsi ini menghasilkan angka acak (0–9) dan mengirimkannya ke stream. Setiap kali fungsi ini dipanggil (misalnya saat tombol ditekan), angka baru akan muncul di UI.
 
 ## Soal 7
-*Deskripsi dan jawaban soal 7*
+Jelaskan maksud kode langkah 13 sampai 15 tersebut!
+Kembalikan kode seperti semula pada Langkah 15, comment addError() agar Anda dapat melanjutkan ke praktikum 3 berikutnya.
+Lalu lakukan commit dengan pesan "W13: Jawaban Soal 7".
+
+Langkah 13: Tambahkan addError di stream.dart
+Fungsi addError() ditambahkan untuk memasukkan pesan error ke dalam Stream menggunakan controller.sink.addError('error');. Ini memungkinkan kita untuk mengirim error secara manual ke stream.
+
+Langkah 14: Tambahkan onError di main.dart
+Di dalam initState(), onError digunakan untuk menangani error pada stream. Jika error terjadi, lastNumber akan di-set ke -1, dan UI akan di-update dengan nilai ini, sebagai indikasi bahwa ada error.
+
+Langkah 15: Edit addRandomNumber()
+Pada langkah ini, dua baris yang menghasilkan dan menambahkan angka acak dikomentari. Sebagai gantinya, numberStream.addError() dipanggil untuk memasukkan error ke dalam stream saat tombol ditekan, sehingga onError di langkah 14 akan menangani error tersebut.
 
 ## Soal 8
 *Deskripsi dan jawaban soal 8*
