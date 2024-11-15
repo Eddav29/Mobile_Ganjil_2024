@@ -13,6 +13,7 @@
   - [Soal 10](#soal-10)
   - [Soal 11](#soal-11)
   - [Soal 12](#soal-12)
+  - [Soal 13](#soal-13)
 
 ## Soal 1
 Tambahkan nama panggilan Anda pada title app sebagai identitas hasil pekerjaan Anda.
@@ -179,11 +180,48 @@ Jika sudah ditutup, lastNumber diatur menjadi -1 untuk menunjukkan bahwa data ti
 Kode ini memastikan angka acak hanya ditambahkan ke stream jika ma
 
 ## Soal 10
-*Deskripsi dan jawaban soal 10*
+Jelaskan mengapa error itu bisa terjadi ?
+
+error terjadi dikarenakan terdapat 2 stream dimana 1 stream sudah dijalankan yaitu stream yang pertama 
 
 ## Soal 11
-*Deskripsi dan jawaban soal 11*
+Jelaskan mengapa hal itu bisa terjadi ?
+Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+Lalu lakukan commit dengan pesan "W13: Jawaban Soal 10,11".
+
+![Hasil Praktikum Soal 11](soal11.gif)
+
+hal tersebut bisa terjadi dikarenakan kita membuat multiple stream subscription dengan cara menambahkan .asBroadcastSystem pada saat instansi stream
+
+maka ketika button new random number di klik maka stream akan dibuat berkali kali dan menghasilkan loop
 
 ## Soal 12
-*Deskripsi dan jawaban soal 12*
+Jelaskan maksud kode pada langkah 3 dan 7 !
+Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+Lalu lakukan commit dengan pesan "W13: Jawaban Soal 12".
+
+![Hasil Praktikum Soal 12](soal12.gif)
+
+maksud dari kode langkah 3 dan 7 adalah
+
+Langkah 3 
+
+getNumberStream adalah metode yang mengembalikan stream (Stream<int>).
+Stream.periodic menghasilkan event setiap detik (Duration(seconds: 1)).
+Setiap event, fungsi callback menghasilkan angka acak antara 0 dan 9 (random.nextInt(10)).
+yield* digunakan untuk mengirimkan nilai dari stream yang dihasilkan oleh Stream.periodic.
+
+kemudian langkah 7 
+StreamBuilder digunakan untuk membangun UI berdasarkan data dari stream (numberStream).
+initialData: 0 menetapkan data awal sebelum stream menghasilkan nilai.
+builder adalah fungsi yang membangun widget berdasarkan snapshot dari stream.
+Jika snapshot.hasError bernilai true, menampilkan teks 'Error'.
+Jika snapshot.hasData bernilai true, menampilkan angka dari stream dalam teks besar.
+Jika tidak ada data, menampilkan widget kosong (SizedBox.shrink()).
+
+## Soal 13
+Soal 13
+Jelaskan maksud praktikum ini ! Dimanakah letak konsep pola BLoC-nya ?
+Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+Lalu lakukan commit dengan pesan "W13: Jawaban Soal 13".
 
