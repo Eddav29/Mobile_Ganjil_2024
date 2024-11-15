@@ -155,7 +155,28 @@ Langkah 3: Menggunakan transformer pada stream.listen
 Stream menggunakan transformer untuk memproses data sebelum diterima listener. Saat data diterima, nilai diperbarui di lastNumber. Jika terjadi error, onError akan men-set lastNumber ke -1.
 
 ## Soal 9
-*Deskripsi dan jawaban soal 9*
+Jelaskan maksud kode langkah 2, 6 dan 8 tersebut!
+Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+Lalu lakukan commit dengan pesan "W13: Jawaban Soal 9".
+![alt text](image.png)
+Langkah 2
+Kode ini berada dalam metode initState() dan melakukan inisialisasi objek NumberStream, StreamController, serta Stream. Kemudian, listener (subscription) ditambahkan ke stream untuk memantau setiap data yang masuk:
+
+Event listener: Saat data baru diterima oleh stream, listener akan memperbarui lastNumber dengan nilai event tersebut.
+Error handler: Jika terjadi error, onError akan memperbarui lastNumber menjadi -1 untuk menandakan error.
+Completion handler: Ketika stream selesai (onDone), program akan mencetak pesan "OnDone was called".
+Inisialisasi ini memungkinkan aplikasi untuk menerima, menampilkan, dan menangani data serta error dari stream.
+
+Langkah 6
+Langkah ini memastikan listener berhenti dan stream dibatalkan saat widget dihapus dari tree Flutter. Di dalam metode dispose(), subscription.cancel() dipanggil untuk menghentikan langganan listener, mencegah memory leak atau aktivitas berkelanjutan yang tidak diperlukan.
+
+Langkah 8
+Metode addRandomNumber() menambahkan angka acak ke stream:
+
+Angka acak (0 hingga 9) dihasilkan dan diperiksa apakah numberStreamController masih terbuka.
+Jika terbuka, angka tersebut ditambahkan ke stream dengan numberStream.addNumberToSink(myNum).
+Jika sudah ditutup, lastNumber diatur menjadi -1 untuk menunjukkan bahwa data tidak dapat dikirim ke stream.
+Kode ini memastikan angka acak hanya ditambahkan ke stream jika ma
 
 ## Soal 10
 *Deskripsi dan jawaban soal 10*
