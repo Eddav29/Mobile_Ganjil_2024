@@ -6,6 +6,8 @@
   - [Praktikum 1](#praktikum-1)
   - [Praktikum 2](#praktikum-2)
   - [Praktikum 3](#praktikum-3)
+  - [Praktikum 4](#praktikum-4)
+  - [Praktikum 5](#praktikum-5)
 
 ## Praktikum 1
 ![alt text](image.png)
@@ -25,3 +27,8 @@ hasi dari gambar tersebut adalah langkah dari praktikum 3 yang membuat sebuah fu
 ![Praktikum 3](Praktikum3.gif)
 hasil diatas merupakan hasil dari pembuatan fungsi tambahan untuk menghapus data yang telah disimpan 
 
+## Praktikum 4
+Dengan menggunakan dependency dari path provide maka kita bisa mendapatkan informasi path dari folder aplikasi yang sudah dibuat
+![Praktikum 4](image-4.png)
+
+## Praktikum 5
