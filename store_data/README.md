@@ -37,4 +37,7 @@ Kemudian pada praktikum 5 menggunakan dart io untuk menulis/membuat dan membaca 
 ![Praktikum 3](Praktikum5.gif)
 
 ## Praktikum 6
+Pada Praktikum 6 Terdapat penggunaan dependency Secure storage untuk menyimpan data secara aman dengan menggunakan metode enkripsi. Dependency ini memungkinkan kita untuk menyimpan data sensitif seperti token atau kredensial pengguna dengan aman di perangkat.
+
+![Praktikum 6](Praktikum6.gif)
 
