@@ -5,6 +5,7 @@
   - [Daftar Isi](#daftar-isi)
   - [Praktikum 1](#praktikum-1)
   - [Praktikum 2](#praktikum-2)
+  - [Praktikum 3](#praktikum-3)
 
 ## Praktikum 1
 ![alt text](image.png)
@@ -17,3 +18,10 @@ kemudian lanjutan dari langkah 11 sampai 22 adalah sebuah proses mengubah sebuah
 
 ![alt text](image-2.png)
 Kemudian hasil pada praktikum 2 adalah sebuah pembuatan method baru pada kelas pizza untuk mengembalikan sebuah map dari objek yang dapat direalisasikan kembali menjadi string dengan method convert to Json yang memanggil metode jsonEncode dari dart:convert kemudian terakhir dilakukan pengecekkan menggunakan debug 
+
+## Praktikum 3
+![alt text](image-3.png)
+hasi dari gambar tersebut adalah langkah dari praktikum 3 yang membuat sebuah fungsi untuk menghitung berapa kali kita membuka aplikasi ini yang disimpan menggunakan library shared_preferences
+![Praktikum 3](Praktikum3.gif)
+hasil diatas merupakan hasil dari pembuatan fungsi tambahan untuk menghapus data yang telah disimpan 
+

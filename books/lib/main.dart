@@ -1,13 +1,6 @@
 import 'dart:async';
-import 'package:books/navigation_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
-import 'package:http/http.dart' as http;
-import 'package:async/async.dart';
-
-import 'geolocation.dart';
-import 'navigation_first.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,7 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const NavigationDialog(),
+      home: const FuturePage(),
     );
   }
 }
@@ -32,162 +25,55 @@ class FuturePage extends StatefulWidget {
 }
 
 class _FuturePageState extends State<FuturePage> {
-  String result = '';
+  int appCounter = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    readAndWritePreference();
+  }
+
+  Future<void> readAndWritePreference() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    int counter = (prefs.getInt('appCounter') ?? 0);
+    counter++;
+    await prefs.setInt('appCounter', counter);
+    setState(() {
+      appCounter = counter;
+    });
+  }
+
+  Future<void> resetCounter() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.clear();
+    setState(() {
+      appCounter = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Back from Future Demo'),
+        title: const Text('App Counter'),
       ),
       body: Center(
         child: Column(
-          children:[
-            ElevatedButton(
-              child: const Text('Go'),
-              onPressed: (){
-                // setState(() {});
-                // getData().then((value) {
-                //   result = value.body.toString().substring(0,450);
-                //   setState(() {});
-                // }).catchError((_){
-                //   result = 'An Error Occured';
-                //   setState(() {});
-                // });
-
-                // count();
-                // getNumber().then((value) {
-                //   setState(() {
-                //     result = value.toString();
-                //   });
-                // });
-                // 
-                // ReturnFG();
-
-                // returnError().then((value) {
-                //   setState(() {
-                //     result = "Success";
-                //   });
-                // }).catchError((onError){
-                //   setState(() {
-                //     result = onError.toString();
-                //   });
-                // }).whenComplete(() {
-                //   print('Completed');
-                // });
-
-                handleError();
-              },
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'You have opened the app $appCounter times',
+              style: const TextStyle(fontSize: 24),
+              textAlign: TextAlign.center,
             ),
-            const Spacer(),
-            Text(result),
-            const Spacer(),
-          ]
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: resetCounter,
+              child: const Text('Reset Counter'),
+            ),
+          ],
         ),
       ),
     );
-  }
-
-  Future<Response> getData() async {
-    const authority = 'www.googleapis.com';
-    const path = 'books/v1/volumes/kLAoswEACAAJ';
-    Uri url = Uri.https(authority, path);
-    return http.get(url);
-  }
-
-  Future<int> returnOneAsync() async {
-    await Future.delayed(const Duration(seconds: 1));
-    return 1;
-  }
-
-  Future<int> returnTwoAsync() async {
-    await Future.delayed(const Duration(seconds: 1));
-    return 2;
-  }
-
-  Future<int> returnThreeAsync() async {
-    await Future.delayed(const Duration(seconds: 1));
-    return 3;
-  }
-
-  Future count() async {
-    int total = 0;
-    total += await returnOneAsync();
-    total += await returnTwoAsync();
-    total += await returnThreeAsync();
-    setState(() {
-      result = total.toString();
-    });
-  }
-
-  late Completer completer;
-
-  Future getNumber() {
-    completer = Completer<int>();
-    calculate();
-    return completer.future;
-  }
-
-  Future calculate() async {
-    await Future.delayed(const Duration(seconds : 5));
-    completer.complete(42);
-  }
-  
-  Future calculate2() async {
-    try {
-      await Future.delayed(const Duration(seconds : 5));
-      completer.complete(42);
-    } catch (_) {
-      completer.completeError({});
-    }
-  }
-
-  void ReturnFG(){
-    // FutureGroup<int> futureGroup = FutureGroup<int>();
-    // futureGroup.add(returnOneAsync());
-    // futureGroup.add(returnTwoAsync());
-    // futureGroup.add(returnThreeAsync());
-    // futureGroup.close();
-    // futureGroup.future.then((List<int> value) {
-    //   int total = 0;
-    //   for(var element in value){
-    //     total += element;
-    //   }
-    //   setState(() {
-    //     result = total.toString();
-    //   });
-    // });
-
-    final futures = Future.wait<int>([
-      returnOneAsync(),
-      returnTwoAsync(),
-      returnThreeAsync(),
-    ]);
-
-    futures.then((List<int> value) {
-      int total = 0;
-      for(var element in value){
-        total += element;
-      }
-      setState(() {
-        result = total.toString();
-      });
-    });
-  }
-
-  Future returnError() async {
-    await Future.delayed(const Duration(seconds: 2));
-    throw Exception('Sonething Terrrible Happened');
-  }
-
-  Future handleError() async {
-    try {
-      await returnError();
-    } catch (e) {
-      setState(() {
-        result = e.toString();
-      });
-    } finally {
-      print('Complete');
-    }
   }
 }
