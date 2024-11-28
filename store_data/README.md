@@ -8,6 +8,7 @@
   - [Praktikum 3](#praktikum-3)
   - [Praktikum 4](#praktikum-4)
   - [Praktikum 5](#praktikum-5)
+  - [Praktikum 6](#praktikum-6)
 
 ## Praktikum 1
 ![alt text](image.png)
@@ -32,3 +33,8 @@ Dengan menggunakan dependency dari path provide maka kita bisa mendapatkan infor
 ![Praktikum 4](image-4.png)
 
 ## Praktikum 5
+Kemudian pada praktikum 5 menggunakan dart io untuk menulis/membuat dan membaca file denhgan fungsi myFile.writingAsString() untuk menulis file sebagao string dan myFile.readAsString untuk membaca file sebagai string juga
+![Praktikum 3](Praktikum5.gif)
+
+## Praktikum 6
+

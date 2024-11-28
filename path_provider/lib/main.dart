@@ -49,41 +49,76 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
  
- String documentPath='';
- String tempPath='';
+  String documentPath='';
+  String tempPath='';
 
-  
+  late File myFile;
+  String  fileText = '';
 
- Future getPath() async{
-   final docDir = (await getApplicationDocumentsDirectory());
-   final tempDir = (await getTemporaryDirectory());
-   setState(() {
-     documentPath = docDir.path;
+  Future getPath() async{
+    final docDir = (await getApplicationDocumentsDirectory());
+    final tempDir = (await getTemporaryDirectory());
+    setState(() {
+      documentPath = docDir.path;
       tempPath = tempDir.path;
-   });
- }
+    });
+  }
 
- @override
- void initState(){
-   super.initState();
-   getPath();
- }
 
- @override
- Widget build(BuildContext context){
-   return Scaffold(
-     appBar: AppBar(
-       title: const Text('Path Provider Eddo'),
-     ),
-     body: Center(
-       child: Column(
-         mainAxisAlignment: MainAxisAlignment.center,
-         children: <Widget>[
-           Text('Document Path: $documentPath'),
-           Text('Temporary Path: $tempPath'),
-         ],
-       ),
-     ),
-   );
- }
+  Future<bool> writeFile() async{
+    try{
+      await myFile.writeAsString('Margherita, Capricciosa, Napoli');
+    return true;
+    }
+    catch(e){
+      return false;
+    }
+  }
+
+  Future<bool> readFile() async{
+    try{
+      String fileContent = await myFile.readAsString();
+      setState(() {
+        fileText = fileContent;
+      });
+      return true;
+    }
+    catch(e){
+      return false;
+    }
+  }
+
+  @override
+  void initState(){
+    super.initState();
+    getPath().then((_){
+      myFile = File('$documentPath/pizzas.txt');
+      writeFile();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Path Provider Eddo'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text('Document Path: $documentPath'),
+            Text('Temporary Path: $tempPath'),
+            ElevatedButton(
+              onPressed: (){
+                readFile();
+              },
+              child: const Text('Read File'),
+            ),
+            Text('File Content: $fileText'),
+          ],
+        ),
+      ),
+    );
+  }
 }
