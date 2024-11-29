@@ -31,8 +31,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  
-  Future<List<Pizza>> callPizzas() async{
+  Future<List<Pizza>> callPizzas() async {
     HttpHelper helper = HttpHelper();
     List<Pizza> pizzas = await helper.getPizzaList();
     return pizzas;
@@ -47,23 +46,45 @@ class _MyHomePageState extends State<MyHomePage> {
       body: FutureBuilder(
         future: callPizzas(),
         builder: (BuildContext context, AsyncSnapshot snapshot) {
-          if (snapshot.hasError){
+          if (snapshot.hasError) {
             return const Center(child: Text('Something went wrong'));
-          } 
-          if (!snapshot.hasData){
+          }
+          if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
           }
           return ListView.builder(
-            itemCount: (snapshot.data == null)? 0 : snapshot.data!.length,
-            itemBuilder: (BuildContext context, int position){
-              return ListTile(
-                title: Text(snapshot.data![position].pizzaName),
-                subtitle: Text(snapshot.data[position].description+ ' - \$' + snapshot.data[position].price.toString()),
-                onTap: () {
-                  Navigator.push(context,MaterialPageRoute(
-                    builder: (context)=> PizzaDetailScreen(pizza: snapshot.data![position], isNew: false)
-                    ));
+            itemCount: snapshot.data?.length ?? 0,
+            itemBuilder: (BuildContext context, int position) {
+              if (position >= snapshot.data!.length) return Container(); // Validasi posisi
+              return Dismissible(
+                key: Key(snapshot.data![position].id.toString()),
+                onDismissed: (direction) {
+                  HttpHelper helper = HttpHelper();
+                  final pizzaId = snapshot.data![position].id; // Simpan id sebelum menghapus
+                  setState(() {
+                    snapshot.data!.removeAt(position); // Hapus item dari list
+                  });
+                  helper.deletePizza(pizzaId); // Hapus dari server
                 },
+                child: ListTile(
+                  title: Text(snapshot.data![position].pizzaName),
+                  subtitle: Text(
+                    snapshot.data[position].description +
+                        ' - \$' +
+                        snapshot.data[position].price.toString(),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PizzaDetailScreen(
+                          pizza: snapshot.data![position],
+                          isNew: false,
+                        ),
+                      ),
+                    );
+                  },
+                ),
               );
             },
           );
@@ -71,15 +92,14 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
-        onPressed: (){
+        onPressed: () {
           Navigator.push(context, MaterialPageRoute(
-            builder: (context) => PizzaDetailScreen(
-              pizza: Pizza(),
-              isNew: true,
-            )));
+              builder: (context) => PizzaDetailScreen(
+                    pizza: Pizza(),
+                    isNew: true,
+                  )));
         },
       ),
     );
   }
-
 }
