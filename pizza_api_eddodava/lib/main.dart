@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:pizza_api_eddodava/httphelper.dart';
-
+import './pizza_detail.dart';
 import './pizza.dart';
 import 'package:flutter/material.dart';
 
@@ -63,6 +63,12 @@ class _MyHomePageState extends State<MyHomePage> {
               );
             },
           );
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const PizzaDetailScreen()));
         },
       ),
     );
