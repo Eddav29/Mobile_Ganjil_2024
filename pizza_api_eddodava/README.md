@@ -5,7 +5,7 @@
   - [Daftar Isi](#daftar-isi)
   - [Praktikum 1: Membuat Endpoint Get](#praktikum-1-membuat-endpoint-get)
   - [Praktikum 2: Membuat Endpoint Post](#praktikum-2-membuat-endpoint-post)
-  - [Praktikum 3: Membuat Endpoint POST](#praktikum-3-membuat-endpoint-post)
+  - [Praktikum 3: Membuat Endpoint PUT](#praktikum-3-membuat-endpoint-put)
   - [Praktikum 4: Membuat Endpoint PUT dan DELETE](#praktikum-4-membuat-endpoint-put-dan-delete)
 
 ## Praktikum 1: Membuat Endpoint Get
@@ -56,8 +56,22 @@ Diatas adalah hasil dari percobaan post data ke api , Ketika pengguna mengisi fo
 
 
 
-## Praktikum 3: Membuat Endpoint POST
-Pada praktikum ini, kita akan membuat endpoint POST untuk mengirim data ke server.
+## Praktikum 3: Membuat Endpoint PUT
+
+Diatas adalah hasil percobaan pembuatan endpoint PUT, dimana yang membedakan dari POST adalah method yang digunakan adalah PUT dari dependency http. 
+
+```dart
+Future<String> updatePizza(Pizza pizza) async {
+    const putPath = "/pizza/${pizza.id}";
+    String put = json.encode(pizza.toJson());
+    Uri url = Uri.https(authority, putPath);
+    http.Response r = await http.put(url, body: put);
+    return r.body;
+}
+```
+![Praktikum 3](image-2.png)
+
+Pada contoh di atas, method `updatePizza()` akan mengirimkan data yang diperbarui ke server menggunakan method `http.put()`. Endpoint ini digunakan untuk memperbarui data pizza yang sudah ada di server.
 
 ## Praktikum 4: Membuat Endpoint PUT dan DELETE
 Pada praktikum ini, kita akan membuat endpoint PUT untuk memperbarui data dan endpoint DELETE untuk menghapus data dari server.
